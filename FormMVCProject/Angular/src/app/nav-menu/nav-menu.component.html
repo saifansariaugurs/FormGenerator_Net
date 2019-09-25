@@ -1,0 +1,102 @@
+<!--<div class='main-nav'>
+    <div class='navbar navbar-inverse'>
+        <div class='navbar-header'>
+            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse' [attr.aria-expanded]='isExpanded' (click)='toggle()'>
+                <span class='sr-only'>Toggle navigation</span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+            <a class='navbar-brand' [routerLink]='["/"]'>FormGenerator_Net_Project</a>
+        </div>
+        <div class='clearfix'></div>
+        <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
+            <ul class='nav navbar-nav'>
+                <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                    <a [routerLink]='["/"]' (click)='collapse()'>
+                        <span class='glyphicon glyphicon-home'></span> Home
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/counter"]' (click)='collapse()'>
+                        <span class='glyphicon glyphicon-education'></span> Counter
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/fetch-data"]' (click)='collapse()'>
+                        <span class='glyphicon glyphicon-th-list'></span> Fetch data
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>-->
+
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href=""><img src="assets/images/logo.png" alt="" class="img-responsive changeLogo" /></a>
+
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right manu-top">
+
+          <li><a href="/auth/login">Login</a></li>
+          <li><a href="/auth/register">Register</a></li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Create New<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+              <li><a href="tailor-made/create/form">Form</a></li>
+              <li><a href="tailor-made/create/queues">Queues</a></li>
+              <li><a href="tailor-made/create/calendar">Calendar</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Forms<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+              <li><a href="javascript:;" onClick="addNewForm('', '', '','')">Add New Form</a></li>
+              <li><a href="javascript:;" onClick="addNewForm('', '', 'check','','')">Add New Queue</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="forms/personal">Personal Forms</a></li>
+              <li><a href="forms/private">Private Group Forms</a></li>
+              <li><a href="forms/subscribed">My Subscribed Public Forms</a></li>
+              <li><a href="forms/public">All Public Forms</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Groups<span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+              <li><a href="/groups/create"> Create Group</a></li>
+              <li><a href="groups"> Group List</a></li>
+            </ul>
+          </li>
+          <li><a href="users">Contacts</a></li>
+          <li><a href="application">Applications</a></li>
+          <li><a href="forms/market-place">Market Place</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="user/profile">Profile</a></li>
+              <li><a href="user-forms">Forms</a></li>
+              <li><a href="menus">Menu Config</a></li>
+              <li><a href="plan">Plan</a></li>
+              <li><a href="user/orderHistory">Order History</a></li>
+              <li><a href="settings">Global Settings</a></li>
+              <li><a href="github">GitHub</a></li>
+              <li><a href="#" data-href="/auth/logout" id="signOut">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

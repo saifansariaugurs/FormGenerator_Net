@@ -1,0 +1,133 @@
+<!--div class='container-fluid'>
+  <div class='row'>
+    <div class='col-sm-3'>
+      <app-nav-menu></app-nav-menu>
+    </div>
+    <div class='col-sm-9 body-content'>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>-->
+
+
+
+<div class="container-fluid"> </div>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href=""><img src="assets/images/logo.png" alt="" class="img-responsive changeLogo" /></a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right manu-top">
+
+        <li><a href="/auth/login">{{ 'Login' | translate }} </a></li>
+        <li><a href="/auth/register">{{ 'Register' | translate }} </a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              {{ 'Create_New' | translate }}
+        <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            <li><a href="tailor-made/create/form">        {{ 'Form' | translate }} </a></li>
+            <li><a href="tailor-made/create/queues">  {{ 'Queues' | translate }}</a></li>
+            <li><a href="tailor-made/create/calendar">  {{ 'Calendar' | translate }}</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              {{ 'Forms' | translate }}
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            <li><a href="javascript:;" onClick="addNewForm('', '', '','')">
+                {{ 'Add_New_Form' | translate }}
+            </a></li>
+            <li><a href="javascript:;" onClick="addNewForm('', '', 'check','','')">   {{ 'Add_New_Queue' | translate }}</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="forms/personal">{{ 'Personal_Forms' | translate }}</a></li>
+            <li><a href="forms/private">{{ 'Private_Group_Forms' | translate }}</a></li>
+            <li><a href="forms/subscribed">{{ 'My_Subscribed_Public_Forms' | translate }}</a></li>
+            <li><a href="forms/public">{{ 'All_Public_Forms' | translate }}</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            {{ 'Groups' | translate }}
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            <li><a href="/groups/create">       {{ 'Create_Groups' | translate }}  </a></li>
+            <li><a href="groups"> {{ 'Group_List' | translate }}  </a></li>
+          </ul>
+        </li>
+        <li><a href="users"> {{ 'Contacts' | translate }} </a></li>
+        <li><a href="application"> {{ 'Applications' | translate }} </a></li>
+        <li><a href="forms/market-place"> {{ 'Market_Place' | translate }} </a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="user/profile"> {{ 'Profile' | translate }} </a></li>
+            <li><a href="user-forms"> {{ 'Forms' | translate }} </a></li>
+            <li><a href="menus"> {{ 'Menu_Config' | translate }} </a></li>
+            <li><a href="plan"> {{ 'Plan' | translate }} </a></li>
+            <li><a href="user/orderHistory"> {{ 'Order_History' | translate }} </a></li>
+            <li><a href="settings"> {{ 'Global_Settings' | translate }} </a></li>
+            <li><a href="github"> {{ 'GitHub' | translate }} </a></li>
+            <li><a href="#" data-href="/auth/logout" id="signOut"> {{ 'Logout' | translate }} </a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+             {{ 'Languages' | translate }} 
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a (click)="changeLanguage('en')" >English</a></li>
+            <li><a (click)="changeLanguage('ch')" >Chinese</a></li>
+          
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  
+
+  <!--{{-- Breadcrumbs::render('users') --}}
+  @if(Auth::user())
+  @if((!empty(Auth::user()->email) && Auth::user()->emailVerified == "No" && isset(Auth::user()->emailCheck) && Auth::user()->emailCheck=="Yes") || (!empty(Auth::user()->phoneNumber) && Auth::user()->phoneVerified == "No" && isset(Auth::user()->phoneCheck) && Auth::user()->phoneCheck=="Yes"))
+  <div class="col-sm-12">
+    <div class="alert alert-info alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      Your
+      @if((Auth::user()->emailVerified == "No" && isset(Auth::user()->emailCheck) && Auth::user()->emailCheck=="No"))
+      email id
+      @endif
+      @if((Auth::user()->emailVerified == "No" && isset(Auth::user()->emailCheck) && Auth::user()->emailCheck=="Yes") && (Auth::user()->phoneVerified == "No" && isset(Auth::user()->phoneCheck) && Auth::user()->phoneCheck=="Yes"))
+      and
+      @endif
+      @if((Auth::user()->phoneVerified == "No"))
+      phone number
+      @endif
+      is not verified. Please verify it first!
+      <a href="user/profile" class="btn btn-success">Go to Profile</a><br />
+    </div>
+  </div>-->
+  <div class="clearfix"></div>
+      <router-outlet></router-outlet>
+    
+ 
+</div>
+
+

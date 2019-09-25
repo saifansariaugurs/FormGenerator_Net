@@ -1,0 +1,142 @@
+ 
+<div class="container">
+    <div class="row"> 
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span id="menuName">Edit Application</span>
+                    <span class="hidden" id="menuDescription">This is the description of the Application. </span>
+                    <input type="hidden" name="tabulator" value="applicationDetail">
+                    <input type="hidden" name="tabulatorStorage" value="appDetail">
+                </div>
+                <div class="panel-body">                    
+                        <form
+                        class="needs-validation"
+                        name="form"
+                        (ngSubmit)="(f.valid && f.dirty)  && onUpdate()"
+                        #f="ngForm"
+                        novalidate
+                      >
+                    <div class="col-sm-12">
+               
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                    <label for="applicationTitle" class="control-label">Application Title</label>
+                                   
+                                <input
+                                id="applicationTitle1"               
+                                class="form-control"             
+                                name="applicationTitle"
+                             
+                                type="text"
+                                placeholder="Enter applicationTitle"
+                                [(ngModel)]="applicationData.applicationTitle"
+                                #applicationTitle="ngModel"
+                                [ngClass]="{
+                                  'is-invalid':
+                                  applicationTitle.invalid && (applicationTitle.dirty || applicationTitle.touched),
+                                  'is-valid': applicationTitle.valid && (applicationTitle.dirty || applicationTitle.touched)
+                                }"
+                                tabindex="1"
+                                required
+                                       
+                              />
+                
+                              <div
+                                *ngIf="applicationTitle.invalid && (applicationTitle.dirty || applicationTitle.touched)"
+                                class="invalid-feedback"
+                              >
+                                <div *ngIf="applicationTitle.errors.required">applicationTitle is required</div>
+                    
+
+                           
+                              </div>
+                            
+
+
+
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                    <label class="control-label">Application Tag</label>
+                                    <input
+                                    id="applicationTag"               
+                                    class="form-control"             
+                                    name="applicationTag"
+                                 
+                                    type="text"
+                                    placeholder="Enter    Application Tag"
+                                    [(ngModel)]="applicationData.applicationTag"
+                                    #applicationTag="ngModel"
+                                 
+                                    tabindex="2"
+                                    
+                                           
+                                  />
+                    
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                    <label class="control-label">Status</label>     
+                            <select class="form-control" name="status"    #status="ngModel" [(ngModel)]="applicationData.status" >
+                                <option *ngFor="let s of statusList" value="{{s.value}}">
+                                    {{s.name}}
+                                </option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                 
+                                    <label class="control-label">   Public Template</label> 
+                             <span *ngFor="let a of accessList;let i =index">
+                                 <input type="radio"  id="publicTemplate" name="publicTemplate"   
+                             
+                               [checked]="a.ischecked"
+                                 >{{a.name}} 
+                             </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                    
+                                    <label class="control-label">   Protected</label> 
+                                    <span *ngFor="let a of accessList;let i =index">
+                                            <input type="radio" id="protectedApplication" name="protectedApplication" 
+                                                [checked]="a.ischecked"  
+                                            >{{a.name}}
+                                        </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-sm-6">
+                        <button type="submit" [disabled]="!f.valid || !f.dirty" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    </form>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <h4>Forms List 
+                                    <button type="button" class="btn btn-success" (click)="openAddNewForm()"><i class="fa fa-plus"></i> Add New Form</button>
+                                    <button type="button" class="btn btn-success" ><i class="fa fa-plus"></i> Add New Queue</button>
+                               
+                            </h4>
+                            <div id="forms-table"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
