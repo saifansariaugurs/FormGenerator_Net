@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~8.2.7",
     "@angular/router": "~8.2.7",
     "@types/bootbox": "^5.2.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery-ui-dist": "^1.12.1",
     "jquery.tabulator": "^3.5.3",
     "ngx-bootstrap": "^5.1.2",
